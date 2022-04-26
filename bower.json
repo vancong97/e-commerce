@@ -1,0 +1,22 @@
+{
+  "name": "php_lap_oe26_fdf",
+  "description": "",
+  "main": "",
+  "authors": [
+    "duongvancong <congdev01@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/vancong97/php_lap_oe26_fdf",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "template": "https://github.com/vancong97/bower_project1.git",
+    "chart.js": "^2.9.3"
+  }
+}

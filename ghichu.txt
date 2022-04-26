@@ -1,0 +1,11 @@
++ luông login
++ đối với SF vào base 1 (đăng ký form xin nghỉ)
++ đối với AM, SUV, DMG,DGM, DR vào base 2 (đăng ký form xin nghỉ, phê duyệt)
++ đối với HR vào base 3 (nhân sự vào xem list đơn xin  nghỉ có quyền thêm, sửa, xóa, đăng ký form xin nghỉ, phê duyệt)
+
+luồng approve.
+SF login vào đăng ký form xin nghỉ->AM login vào ra 1 list danh sách đơn xin nghỉ (trạng thái, approve)->DMG login vào ra 1 list danh sách đơn xin nghỉ mà AM đã phê duyệt->DGM login vào ra 1 list danh sách  đơn xin nghỉ mà DMG đã phê duyệt 
++ các câu hỏi cân hỏi
++ test bằng postman như thế nào
++ về database thiết kế như thế đã ổn chưa.
++  

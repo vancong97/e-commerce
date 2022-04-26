@@ -1,0 +1,135 @@
+.active-revslide {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 18;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.slotholder {
+    width:100%;
+    height:100%;
+}
+
+.tp-bgimg {
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    visibility: inherit;
+}
+
+.banner1 {
+    background-image: url('image/slide/banner1.jpg');
+}
+
+.banner2 {
+    background-image: url('image/slide/banner2.jpg');
+}
+
+.banner3 {
+    background-image: url('image/slide/banner3.jpg');
+}
+
+.banner4 {
+    background-image: url('image/slide/banner4.jpg');
+}
+#logo {
+   height: 100px;
+}
+.header-bottom {
+    background-color: #0277b8;
+}
+.imageindex {
+    height: 250px;
+}
+.img-responsive {
+    height: 100px;
+}
+.price {
+    color: red;
+}
+#cart {
+    color: red;
+}
+.quantity {
+    width: 100px;
+}
+li {
+    list-style: none;
+}
+strong {
+    color: red;
+}
+#color {
+    color: red;
+}
+a:link {
+  text-decoration: none;
+}
+.checked {
+  color: orange;
+}
+.rate-area {
+    float:left;
+    border-style: none;
+}
+
+.rate-area:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rate-area:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:lightgrey;
+    text-shadow:1px 1px #bbb;
+}
+
+.rate-area:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rate-area > input:checked ~ label {
+    color: gold;
+    text-shadow:1px 1px #c60;
+    font-size:200% !important;
+}
+
+.rate-area:not(:checked) > label:hover,
+.rate-area:not(:checked) > label:hover ~ label {
+    color: gold;
+
+}
+
+.rate-area > input:checked + label:hover,
+.rate-area > input:checked + label:hover ~ label,
+.rate-area > input:checked ~ label:hover,
+.rate-area > input:checked ~ label:hover ~ label,
+.rate-area > label:hover ~ input:checked ~ label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod;
+
+}
+
+.rate-area > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+.sigin{
+    max-width: 500px;
+    background-image: linear-gradient(to right,#808080, #C0C0C0);
+    border-radius: 0.2em;
+}

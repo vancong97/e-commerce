@@ -1,0 +1,13 @@
+{
+  "name": "template",
+  "homepage": "https://github.com/vancong97/bower_project1",
+  "_release": "ab3a9590f6",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "ab3a9590f6376a1e771b56fbcd6d4e1d9d01e1ce"
+  },
+  "_source": "https://github.com/vancong97/bower_project1.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/vancong97/bower_project1.git"
+}

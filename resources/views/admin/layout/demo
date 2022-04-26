@@ -1,0 +1,250 @@
+a = {
+  id_user:2, // GIAM SAT
+  status: "",
+  description: "",
+  date: "",
+  isComplete: "",
+  level: [
+    {
+      id_user: 3, // TRUONG PHONG
+      status: "",
+      description: "",
+      date: "",
+      isComplete: "",
+      level: {
+            id_user: 4, // TONG QUAN LY
+            status: "",
+            description: "",
+            date: "",
+            isComplete: "",
+            level: {}
+        }
+    },
+    {
+      id_user: 5, // PHO TRUONG PHONG
+      status: "",
+      description: "",
+      date: "",
+      isComplete: "",
+      level: {
+        id_user: 4, // TONG QUAN LY
+        status: "",
+        description: "",
+        date: "",
+        isComplete: "",
+        level: {}
+      }
+    },
+  ]
+}
+request:
+    1. tim cac cap do quan li, luu vao json, va luu vao bang donxinnghi
+    2. luu vao bang approve (id_user, id_donxinnghi, isComplete)
+
+
+quy trinh approve:
+    1. show danh sach donxinnghi
+        a. if loginer is GiamSat
+
+            a.1: listDonXinNghi = join table approve and table donxinnghi with id_user (is column table appreve) == id_loginer
+
+            a.2: XuLi:
+                update column isComplete table approve is true( or 1 or .....)
+                update column approve in table donxinnghi is:
+                {
+                  id_user:2, // GIAM SAT
+                  status: true or false, (true is approve and false is unapprove)
+                  description: "asdasdasdasdsadasdas",
+                  date: "2020-05-12",
+                  isComplete: true or false (0 or 1),
+                  level: [
+                    {
+                      id_user: 3, // TRUONG PHONG
+                      status: "",
+                      description: "",
+                      date: "",
+                      isComplete: "",
+                      level: {
+                            id_user: 4, // TONG QUAN LY
+                            status: "",
+                            description: "",
+                            date: "",
+                            isComplete: "",
+                            level: {}
+                        }
+                    },
+                    {
+                      id_user: 5, // PHO TRUONG PHONG
+                      status: "",
+                      description: "",
+                      date: "",
+                      isComplete: "",
+                      level: {
+                        id_user: 4, // TONG QUAN LY
+                        status: "",
+                        description: "",
+                        date: "",
+                        isComplete: "",
+                        level: {}
+                      }
+                    },
+                  ]
+                }
+        b. if loginer is TruongPhong (or PhoTruongPhong)
+            b.1: listDonXinNghi = join table approve and table donxinnghi with id_user (is column table appreve) == id_loginer
+                check column approve in table donxinnghi:
+                check id_user of level 0 :
+                    if is loginer => show donxinnghi
+                    if not loginer =>
+                        check isComplete
+                        if (isComplete == true ) {
+                            TPP =  a.level.lenght (dem trong array level co bao nhieu nguoi)
+                            if(TPP > 1) {
+                                var check =  tpp.map( (object) => {
+                                    return object.isComplete != '' ? true : false
+                                } )
+
+                                if (!check) show donxinnghi
+                            }
+                            if(TPP == 0){
+                                var check =  a.isComplete != '' ? true : false
+
+                                if (!check) show donxinnghi
+                            }
+                        }
+            b.2: XuLi:
+                update column isComplete table approve is true( or 1 or .....)
+                update column approve in table donxinnghi is:
+                {
+                  id_user:2, // GIAM SAT
+                  status: true or false, (true is approve and false is unapprove)
+                  description: "asdasdasdasdsadasdas",
+                  date: "2020-05-12",
+                  isComplete: true or false (0 or 1),
+                  level: [
+                    {
+                      id_user: 3, // TRUONG PHONG
+                      status: true or false, (true is approve and false is unapprove),
+                      description: "asdasdasdasdsadasdas",
+                      date: "2020-05-12",
+                      isComplete: true or false (0 or 1),
+                      level: {
+                            id_user: 4, // TONG QUAN LY
+                            status: "",
+                            description: "",
+                            date: "",
+                            isComplete: "",
+                            level: {}
+                        }
+                    },
+                    {
+                      id_user: 5, // PHO TRUONG PHONG
+                      status: "",
+                      description: "",
+                      date: "",
+                      isComplete: "",
+                      level: {
+                        id_user: 4, // TONG QUAN LY
+                        status: "",
+                        description: "",
+                        date: "",
+                        isComplete: "",
+                        level: {}
+                      }
+                    },
+                  ]
+                }
+
+
+                if bosss approve
+                     update column isComplete table approve is true( or 1 or .....)
+                    update column approve in table donxinnghi is:
+                    {
+                      id_user:2, // GIAM SAT
+                      status: true or false, (true is approve and false is unapprove)
+                      description: "asdasdasdasdsadasdas",
+                      date: "2020-05-12",
+                      isComplete: true or false (0 or 1),
+                      level: [
+                        {
+                          id_user: 3, // TRUONG PHONG
+                          status: true or false, (true is approve and false is unapprove),
+                          description: "asdasdasdasdsadasdas",
+                          date: "2020-05-12",
+                          isComplete: true or false (0 or 1),
+                          level: {
+                                id_user: 4, // TONG QUAN LY
+                                status: "",
+                                description: "",
+                                date: "",
+                                isComplete: "",
+                                level: {}
+                            }
+                        },
+                        {
+                          id_user: 5, // PHO TRUONG PHONG
+                          status: "",
+                          description: "",
+                          date: "",
+                          isComplete: "",
+                          level: {
+                            id_user: 4, // TONG QUAN LY
+                            status: "",
+                            description: "",
+                            date: "",
+                            isComplete: "",
+                            level: {}
+                          }
+                        },
+                      ]
+                    }
+
+                    gui nhan status.........
+
+
+
+
+
+
+var json_data = {
+    id_user: '',
+    status: "",
+    description: "",
+    date: "",
+    isComplete: "",
+    level: {}
+}
+var arr = []
+
+data = giam sat, truong phong, tong quan li
+
+giam sat gui don
+
+data = truong phong, tong quan li, giam doc
+
+for (i = 0; i < data.lenght; i ++) {
+
+    if( i == data.lenght - (data.lenght - i))
+        json_data.id_user  = data.id
+        arr.push(json_data)
+
+    if (i == data.lenght - (data.lenght - i))
+    arr[0].level  = {
+        id_user: data.id,
+        status: "",
+        description: "",
+        date: "",
+        isComplete: "",
+        level: {}
+    }
+
+    if (i == data.lenght - (data.lenght - i))
+        arr[0].level[0].level = {
+            id_user: data.id,
+            status: "",
+            description: "",
+            date: "",
+            isComplete: "",
+            level: {}
+        }
+}
